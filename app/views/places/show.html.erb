@@ -1,6 +1,7 @@
-<h1><%= @place.name %></h1>
+<div class="container">
+<h1 class="text-primary"><%= @place.name %></h1>
 
-<h2>My Posts</h2>
+<h2 class="text-secondary">My Posts</h2>
 
 <% if @current_user %>
 
@@ -11,13 +12,15 @@
 <% end %>
 
 <p>
-  <a href="/posts/new?place_id=<%= @place.id %>">New Post</a>
+  <a href="/posts/new?place_id=<%= @place.id %>", class="btn btn-success">New Post</a>
 </p>
 
 <p>
-  <a href="/places">Back to All Places</a>
+  <a href="/places", class="btn btn-info">Back to All Places</a>
 </p>
 
 <%else%>
 Login to add new post or see your previous post(s)!
 <%end%>
+
+</div>
