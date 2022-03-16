@@ -1,13 +1,19 @@
 <div class="container">
 <h1 class="text-primary"><%= @place.name %></h1>
 
-<h2 class="text-secondary">My Posts</h2>
+<h3 class="text-secondary">My Posts</h3>
 
 <% if @current_user %>
 
 <% for post in @place.posts.where({user_id: @current_user.id}) %>
-  <h3><%= post.title %></h3>
-  <h4><%= post.posted_on %></h4>
+<div class="col-md-3 col-sm-6">
+  <h4><%= post.title %></h4>
+  <h6><%= post.posted_on %></h6>
+  <% if post.picture.attached? %>
+  <img src="<%=url_for(post.picture)%>" class="img-fluid">
+  <%else%>
+  <img src="<%post.image%> "class="img-fluid">
+  <%end%>
   <p><%= post.description %></p>
 <% end %>
 
