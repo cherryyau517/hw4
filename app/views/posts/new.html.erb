@@ -2,6 +2,8 @@
 
 <h1>New Post</h1>
 
+
+
 <%= form_with model: @post do |form| %>
    <div class="mb-3">
     <%= form.label "title" %>
@@ -18,12 +20,13 @@
     <%= form.date_field "posted_on" %>
 </div>
 
-    <%= form.submit %>
+    <%= form.submit "Create Post", class: "btn btn-success" %>
 
 
   <%= form.hidden_field "place_id" %>
 
 <%end%>
+
 
 </div>
 
