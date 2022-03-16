@@ -37,9 +37,13 @@
   </div>
 </nav>
 
-    <div class = "container">
-      <%= flash[:notice] %>
+<div class="container mt-3">
+    <div class="row">
+      <div class="col text-center">
+        <%= flash[:notice] %>
+      </div>
     </div>
+
 
     <%= yield %>
 
